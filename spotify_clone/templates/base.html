@@ -11,18 +11,84 @@
     {% block css_files %}{% endblock css_files %}
 </head>
 <body>
-    <nav>
-        <a href="{% url "home-page" %}"><img src="{% static "spotify-logo.png" %}" alt="Spotify logo"></a>
-        <a href="{% url "premium-page" %}">Premium</a>
-        <a href="{% url "support-page" %}">Support</a>
-        <a href="{% url "download-page" %}">Download</a>
-        <a href="{% url "sign-up-page" %}">Sign Up</a>
-        <a href="{% url "log-in-page" %}">Log In</a>
-    </nav>
-    {% block content %}This is content!{% endblock content %}
-    <footer>
-        <h1>This is footer!</h1>
-        <p></p>
-    </footer>
+    <div>
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="{% url "home-page" %}" class="header-logo"><img src="{% static "spotify-logo.png" %}" alt="Spotify logo"></a>
+                </div>
+                <nav class="nav-header">
+                    <ul class="nav-list">
+                        <li class="nav-page"><a class="header-primary" href="{% url "premium-page" %}">Premium</a></li>
+                        <li class="nav-page"><a class="header-primary" href="{% url "support-page" %}">Support</a></li>
+                        <li class="nav-page"><a class="header-primary" href="{% url "download-page" %}">Download</a></li>
+                        <li role="separator" class="nav-separator"></li>
+                        <li class="nav-page"><a class="header-secondary" href="{% url "sign-up-page" %}">Sign Up</a></li>
+                        <li class="nav-page"><a class="header-secondary" href="{% url "log-in-page" %}">Log In</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+    </div>
+    <div>
+        {% block content %}This is content!{% endblock content %}
+    </div>
+    <div>
+        <footer class="footer">
+            <nav class="nav-footer">
+                <div class="footer-logo">
+                    <a href="{% url "home-page" %}" class="footer-logo-img"><img src="{% static "spotify-logo.png" %}" alt="Spotify logo"></a>
+                </div>
+                <div class="footer-list">
+                    <dl class="links-list">
+                        <dt>Company</dt>
+                        <dd>
+                            About
+                        </dd>
+                        <dd>
+                            Jobs
+                        </dd>
+                        <dd>
+                            For the Record
+                        </dd>
+                    </dl>
+                    <dl class="links-list">
+                        <dt>Communities</dt>
+                        <dd>For Artists</dd>
+                        <dd>Developers</dd>
+                        <dd>Advertising</dd>
+                        <dd>Investors</dd>
+                        <dd>Vendors</dd>
+                    </dl>
+                    <dl class="links-list">
+                        <dt>Useful Links</dt>
+                        <dd>Support</dd>
+                        <dd>Web Player</dd>
+                        <dd>Free Mobile App</dd>
+                        <dd>Car Thing</dd>
+                    </dl>
+                </div>
+                <div class="social-media">
+                    <ul class="social-media-links">
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                        <li>Facebook</li>
+                    </ul>
+                </div>
+                <div class="footer-list">
+                    <ul class="footer-bottom-links">
+                        <li><a href="">Legal</a></li>
+                        <li><a href="">Privacy Center</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Cookies</a></li>
+                        <li><a href="">About Ads</a></li>
+                        <li><a href="">Additional CA Privacy Disclosures</a></li>
+                    </ul>   
+                    <span class="footer-copyright">Copyright</span> 
+                </div>
+            </nav>
+        </footer>
+    </div>
 </body>
 </html>
