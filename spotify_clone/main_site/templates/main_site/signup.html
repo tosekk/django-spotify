@@ -6,7 +6,7 @@
 
 {% block content %}
     <h1>This is signup page!</h1>
-    <form action="" method="POST">
+    <form action="{% url "sign-up-page" %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% for form_field in form %}
             {% if form_field is form.user_gender  %}
@@ -24,6 +24,7 @@
                     <label for="{{ form.is_newsletter.id_for_label }}">
                         {{ form.is_newsletter }}
                         {{ form.is_newsletter.label }}
+                        {{ form.is_newsletter.errors }}
                     </label>
                 </div>
             {% else %}
@@ -36,6 +37,6 @@
             {% endif %}
             
         {% endfor %}
-        <button>Register</button>
+        <button type='submit'>Register</button>
     </form>
 {% endblock content %}

@@ -9,7 +9,7 @@ urlpatterns = [
     path("premium/", views.premium, name="premium-page"),
     path("download/", views.download, name="download-page"),
     path("account/", views.account, name="account-page"),
-    path("signup/", views.signup, name="sign-up-page"),
+    path("signup/", views.SignUpView.as_view(), name="sign-up-page"),
     path("login/", views.login, name="log-in-page"),
     path("support/", views.support, name="support-page"),
 ]
